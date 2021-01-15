@@ -11,7 +11,7 @@ const LayoutConteiner = styled.div`
   justify-content: center;
   align-items: center;
 
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 `;
 
@@ -27,9 +27,14 @@ const Button = styled.input`
   margin: 4px 2px;
   cursor: pointer;
 
-  background-color: white;
-  color: black;
+  background-color: transparent;
+  color: rgba(220, 220, 220 0.5);
   border: 2px solid;
+
+  :hover {
+    background-color: rgb(70, 130, 180);
+    border: 2px solid rgb(70, 130, 180);
+  }
 `;
 
 const index = ({ planets }) => {

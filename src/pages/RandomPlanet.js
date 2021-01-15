@@ -7,12 +7,15 @@ const PlanetConteiner = styled.div`
   height: 500px;
   border: 1px solid;
   margin-bottom: 15px;
+  color: #fff;
+  background-color: rgba(70, 130, 180, 0.5);
 `;
 
 const PlanetTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   border-bottom: 1px solid;
 `;
 
@@ -29,7 +32,7 @@ const PlanetDetails = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  max-width: 300px;
+  max-width: 350px;
 
   margin: 20px auto;
 `;
