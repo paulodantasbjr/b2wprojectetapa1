@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Link from 'next/link';
 
 const PlanetConteiner = styled.div`
   width: 500px;
@@ -10,51 +9,56 @@ const PlanetConteiner = styled.div`
   margin-bottom: 15px;
 `;
 
-const PlanetName = styled.h1``;
+const PlanetTitle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid;
+`;
 
-const PlanetDetails = styled.div``;
+const PlanetName = styled.h1`
+  font-size: 3rem;
+  font-weight: 600;
+`;
 
-const Population = styled.div``;
-const Climate = styled.div``;
-const Terrain = styled.div``;
+const PlanetDetails = styled.div`
+  padding: 24px;
+  height: 300px;
 
-const ButtonConteiner = styled.div``;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-const Button = styled.button`
-  background-color: #4caf50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+  margin: 0 auto;
+`;
 
-  background-color: white;
-  color: black;
-  border: 2px solid #008cba;
+const Population = styled.p`
+  font-size: 24px;
+  font-weight: bolder;
+`;
+const Climate = styled.p`
+  font-size: 24px;
+  font-weight: bolder;
+`;
+const Terrain = styled.p`
+  font-size: 24px;
+  font-weight: bolder;
 `;
 
 const RandomPlanet = ({ planets }) => {
-  const hundleChange = () => {};
-
   return (
     <>
       <PlanetConteiner>
-        <PlanetName>{planets.results[0].name}</PlanetName>
+        <PlanetTitle>
+          <PlanetName>{planets.name}</PlanetName>
+        </PlanetTitle>
         <PlanetDetails>
-          <Population>{planets.results[0].population}</Population>
-          <Climate>{planets.results[0].climate}</Climate>
-          <Terrain>{planets.results[0].terrain}</Terrain>
+          <Population>POPULATION: {planets.population}</Population>
+          <Climate>CLIMATE: {planets.climate}</Climate>
+          <Terrain>TERRAIN: {planets.terrain}</Terrain>
         </PlanetDetails>
       </PlanetConteiner>
-      <ButtonConteiner>
-        <Link href="/Planet">
-          <Button onClick={hundleChange}>Next</Button>
-        </Link>
-      </ButtonConteiner>
     </>
   );
 };
